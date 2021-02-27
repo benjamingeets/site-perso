@@ -1,5 +1,11 @@
 # site-perso
 
+Site personnel dédié à exposer 
+
+- une description 
+- un portfolio triable selon les technologies utilisées
+- un blog triable selon des tags
+
 ## Build Setup
 
 ```bash
@@ -17,4 +23,3 @@ $ npm run start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
