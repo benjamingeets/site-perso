@@ -11,7 +11,12 @@ export default {
       { hid: 'description', name: 'description', content: 'Etudiant et développeur web dans la région de Tournai' },
       { hid: 'og:title', property: 'og:title', content: "Benjamin Geets - Développeur web (Tournai 🇧🇪)"},
       { hid: 'og:image', property: 'og:image', content: "https://benjamingeets.be/og_image.png" },
-      { hid: 'og:description', property: 'og:description', content: "Benjamin Geets - Etudiant en e-Business et auto didacte dévoloppeur web" }
+      { hid: 'og:description', property: 'og:description', content: "Benjamin Geets - Etudiant en e-Business et auto didacte dévoloppeur web" },
+      { hid: 'twitter:card', name: 'twitter:card' ,content:'summary_large_image'},
+      { hid: 'twitter:site', name: 'twitter:site', content:'@benjamingeets'},
+      { hid: 'twitter:title', name:'twitter:title', content:'Benjamin Geets - Développeur web (Tournai 🇧🇪)'},
+      { hid: 'twitter:description', name: 'twitter:description', content:"Benjamin Geets - Etudiant en e-Business et auto didacte dévoloppeur web"},
+      { hid: 'twitter:image', name:'twitter:image', content:'https://benjamingeets.be/og_image.png'}
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }

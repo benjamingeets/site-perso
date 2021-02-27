@@ -50,7 +50,10 @@ export default {
             meta: [
                     { hid: 'og:title', property: 'og:title', content: "Porfolio : " + this.titre + " - Benjamin Geets"},
                     { hid: 'og:image', property: 'og:image', content: this.image },
-                    { hid: 'og:description', property: 'og:description', content: this.description.substring(0,140) + "..." }
+                    { hid: 'og:description', property: 'og:description', content: this.description.substring(0,140) + "..." },
+                    { hid: 'twitter:title', name:'twitter:title', content:"Porfolio : " + this.titre + " - Benjamin Geets"},
+                    { hid: 'twitter:description', name: 'twitter:description', content:this.description.substring(0,140) + "..."},
+                    { hid: 'twitter:image', name:'twitter:image', content:this.image }
                 ]
         }
     },
