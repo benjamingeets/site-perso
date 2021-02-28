@@ -6,19 +6,14 @@
       </div>
       <div class="right">
         <h1>Benjamin Geets</h1>
-        <p>Etudiant et développeur web.</p>
-        <p title="Tournai, Hainaut, Belgique">Tournai (<span title="Drapeau belge">🇧🇪</span>), 21 ans.</p>
+        <p>{{index.ligneUne}}</p>
+        <p>{{index.ligneDeux}}</p>
+        <p></p>
       </div>
     </header>
     <article>
       <h3><span title="Boussole">🧭</span> Qui suis-je?</h3>
-      <blockquote>
-        <p>Etudiant en e-Business depuis 2018, j'ai commencé à <b>bidouiller</b> dès que j'ai eu mon premier ordinateur vers 2012.
-          Mes expériences m'ont mené au <b>développement web</b>. Aujourd'hui, je continue à me former au travers
-          de tutoriels et des docs sur des frameworks tels que <b>VueJS</b> et <b>NuxtJS</b> afin de créer des applications que je déploie
-          avec <b>Nginx</b>.
-        </p>
-      </blockquote>
+      <blockquote v-html='$md.render(index.Biographie)'></blockquote>
        <p>
          <a id="mail" target="_blank" href="" title="Envoyer un e-mail">
             <button @click="contact()">📨 Me contacter</button>
@@ -53,11 +48,10 @@ header{
     justify-content: center;
     h1{
       margin:0;
-      margin-left:10px;
+      padding-left:10px;
     }
     p{
-      margin:0;
-      margin-left:10px;
+      margin:0 0 0 10px;
     }
   }
 }
@@ -65,8 +59,24 @@ header{
 
 <script>
 export default {
-  head:{
-    title:'Benjamin Geets - Développeur Web (Tournai 🇧🇪)'
+  data(){
+    return{
+      index: {
+        Biographie:"chargement...",
+        ligneUne:"...",
+        ligneDeux:"..."
+      }
+    }
+  },
+  head(){
+    return{
+      title:'Benjamin Geets - Développeur Web (Tournai 🇧🇪)'
+    }
+  },
+  async fetch() {
+      this.index = await fetch(
+        'https://api.benjamingeets.be/index'
+      ).then(res => res.json())
   },
   methods:{
     contact(){
