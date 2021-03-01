@@ -18,10 +18,10 @@
          <a id="mail" target="_blank" href="" title="Envoyer un e-mail">
             <button @click="contact()">📨 Me contacter</button>
           </a>
-          <a href="https://linkedin.com/in/benjamingeets">LinkedIn</a> | 
-          <a href="https://twitter.com/benjamingeets">Twitter</a> |
-          <a href="https://github.com/benjamingeets">GitHub</a> |
-          <a href="/Benjamin_Geets_CV.pdf">CV</a>
+          <a target="_blank" href="https://linkedin.com/in/benjamingeets">LinkedIn</a> | 
+          <a target="_blank" href="https://twitter.com/benjamingeets">Twitter</a> |
+          <a target="_blank" href="https://github.com/benjamingeets">GitHub</a> |
+          <a target="_blank" href="/Benjamin_Geets_CV.pdf">CV</a>
        </p>
     </article>
   </div>

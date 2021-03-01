@@ -10,7 +10,7 @@
                 <!-- https://api.benjamingeets.be/portfolios?Technologies_contains=php -->
             </ul>
         </p>
-        <p>Lien : <a :href="'https://' + url">{{url}}</a> </p>
+        <p>Lien : <a target="_blank" :href="'https://' + url">{{url}}</a> </p>
         <NuxtLink to="/portfolio">
             <button>
                 ↩️ Retour
@@ -61,6 +61,7 @@ export default {
       this.posts = await fetch(
         'https://api.benjamingeets.be/portfolios?slug=' + this.$route.params.projet
       ).then(res => res.json())
+      
       this.titre = this.posts[0].titre
       this.description = this.posts[0].description
       this.url = this.posts[0].url
