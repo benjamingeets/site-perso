@@ -10,7 +10,8 @@
                 <!-- https://api.benjamingeets.be/portfolios?Technologies_contains=php -->
             </ul>
         </p>
-        <p>Lien : <a target="_blank" :href="'https://' + url">{{url}}</a> </p>
+        <p v-if='disponible'>Lien : <a target="_blank" :href="'https://' + url">{{url}}</a> </p>
+        <p v-else><i>Le projet n'est plus disponible en ligne.</i></p>
         <NuxtLink to="/portfolio">
             <button>
                 ↩️ Retour
@@ -41,7 +42,8 @@ export default {
             description:"Lorem",
             url:"https://benjamingeets.be",
             image:"",
-            technologies:{}
+            technologies:{},
+            disponible:false
         }
     },
     head(){
@@ -67,6 +69,7 @@ export default {
       this.url = this.posts[0].url
       this.image='https://api.benjamingeets.be' + this.posts[0].image.url
       this.technologies=this.posts[0].technologies
+      this.disponible = this.posts[0].disponible
     }
 }
 </script>
