@@ -2,7 +2,7 @@
     <div>
         <h1>{{titre}}</h1>
         <img v-if='image != null' :src="image" alt="">
-        <p v-html='$md.render(content)'></p>
+        <div v-html='$md.render(content)'></div>
         <p>Tags : 
             <span v-for='tag in tags' :key="tag.key"><NuxtLink :to="'/blog/recherche/' + tag">#{{tag}} </NuxtLink></span> 
         </p>
