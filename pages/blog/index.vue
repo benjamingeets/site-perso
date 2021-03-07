@@ -31,10 +31,9 @@ export default {
     }
   },
   async fetch() {
-      this.posts = await fetch(
+      this.articles = await fetch(
         'https://api.benjamingeets.be/blogs?_sort=id:DESC'
       ).then(res => res.json())
-      this.articles = this.posts
 
       //Check tous les tags utilisés a travers les articles (même algo que pour les technos)
       this.articles.forEach(element => {
