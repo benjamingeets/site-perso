@@ -4,6 +4,24 @@
       <ul>
         <li v-for='projet in projets' :key='projet.key'><NuxtLink :to="'/portfolio/'+projet.slug">{{projet.titre}} </NuxtLink></li>
       </ul>
+      <div v-if='!loaded'>
+          <content-loader
+    :width="400"
+    :height="150"
+    :speed="2"
+    primaryColor="#f3f3f3"
+    secondaryColor="#ecebeb"
+  >
+    <circle cx="10" cy="20" r="8" /> 
+    <rect x="25" y="15" rx="5" ry="5" width="220" height="10" /> 
+    <circle cx="10" cy="50" r="8" /> 
+    <rect x="25" y="45" rx="5" ry="5" width="220" height="10" /> 
+    <circle cx="10" cy="80" r="8" /> 
+    <rect x="25" y="75" rx="5" ry="5" width="220" height="10" /> 
+    <circle cx="10" cy="110" r="8" /> 
+    <rect x="25" y="105" rx="5" ry="5" width="220" height="10" />
+  </content-loader>
+      </div>
       <div>Technologies : 
          <span v-for='techno in technologies' :key='techno.key'><NuxtLink :to="'/portfolio/recherche/'+techno">{{techno}}</NuxtLink> | </span>
        </div>
@@ -11,11 +29,16 @@
 </template>
 
 <script>
+import { ContentLoader } from 'vue-content-loader'
 export default {
+  components:{
+    ContentLoader
+  },
   data(){
     return{
       projets:[],
-      technologies:[]
+      technologies:[],
+      loaded:false
     }
   },
   head(){
@@ -39,6 +62,7 @@ export default {
         }
         })
       })
+      this.loaded = true
     }
 }
 </script>

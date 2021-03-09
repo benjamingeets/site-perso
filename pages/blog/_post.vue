@@ -3,6 +3,20 @@
         <h1>{{titre}}</h1>
         <img v-if='image != null' :src="image" alt="">
         <div v-html='$md.render(content)'></div>
+        <div v-if='!loaded'>
+              <content-loader
+    :width="400"
+    :height="230"
+    :speed="2"
+    primaryColor="#f3f3f3"
+    secondaryColor="#ecebeb"
+  >
+    <circle cx="31" cy="31" r="15" /> 
+    <rect x="58" y="18" rx="2" ry="2" width="140" height="10" /> 
+    <rect x="58" y="34" rx="2" ry="2" width="140" height="10" /> 
+    <rect x="0" y="60" rx="2" ry="2" width="400" height="204" />
+  </content-loader>
+        </div>
         <p>Tags : 
             <span v-for='tag in tags' :key="tag.key"><NuxtLink :to="'/blog/recherche/' + tag">#{{tag}} </NuxtLink></span> 
         </p>
@@ -17,7 +31,13 @@
 </template>
 
 <script>
+
+import { ContentLoader } from 'vue-content-loader'
+
 export default {
+    components:{
+        ContentLoader
+    },
     head(){
         return{
              title: `${this.titre} - Blog de Benjamin Geets`,
@@ -34,6 +54,7 @@ export default {
     data(){
         return{
             titre:'⚪️ Titre de l\'article',
+            loaded:false,
             article:{},
             content:'',
             image:'',
@@ -64,6 +85,8 @@ export default {
       this.date.jour = this.article.published_at.substring(8,10)
       this.date.mois = this.article.published_at.substring(5,7)
       this.date.annee = this.article.published_at.substring(0,4)
+
+      this.loaded = true
     }
 }
 </script>

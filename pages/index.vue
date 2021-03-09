@@ -13,7 +13,25 @@
     </header>
     <article>
       <h3><span title="Boussole">🧭</span> Qui suis-je?</h3>
-      <blockquote v-html='$md.render(index.Biographie)'></blockquote>
+      <blockquote v-if="loaded" v-html='$md.render(index.Biographie)'></blockquote>
+      <blockquote v-if="!loaded">
+          <content-loader
+    :width="340"
+    :height="84"
+    :speed="2"
+    primaryColor="#dddddd"
+    secondaryColor="#ecebeb"
+  >
+    <rect x="0" y="0" rx="3" ry="3" width="67" height="11" /> 
+    <rect x="76" y="0" rx="3" ry="3" width="140" height="11" /> 
+    <rect x="127" y="48" rx="3" ry="3" width="53" height="11" /> 
+    <rect x="187" y="48" rx="3" ry="3" width="72" height="11" /> 
+    <rect x="18" y="48" rx="3" ry="3" width="100" height="11" /> 
+    <rect x="0" y="71" rx="3" ry="3" width="37" height="11" /> 
+    <rect x="18" y="23" rx="3" ry="3" width="140" height="11" /> 
+    <rect x="166" y="23" rx="3" ry="3" width="173" height="11" />
+  </content-loader>
+      </blockquote>
        <p>
          <a id="mail" target="_blank" href="" title="Envoyer un e-mail">
             <button @click="contact()">📨 Me contacter</button>
@@ -58,11 +76,18 @@ header{
 </style>
 
 <script>
+
+import { ContentLoader } from 'vue-content-loader'
+
 export default {
+  components:{
+    ContentLoader
+  },
   data(){
     return{
+      loaded:false,
       index: {
-        Biographie:"chargement...",
+        Biographie:"Chargement",
         ligneUne:"...",
         ligneDeux:"..."
       }
@@ -77,6 +102,7 @@ export default {
       this.index = await fetch(
         'https://api.benjamingeets.be/index'
       ).then(res => res.json())
+      this.loaded=true
   },
   methods:{
     contact(){
