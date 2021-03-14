@@ -12,6 +12,6 @@ I've mostly worked on frontend web dev but I'm looking to learn backend with Pyt
 
 * 👨‍🎓 Studying at [HEPH Condorcet](https://condorcet.be) <br/>
 * 📄 Discover my [Curriculum Vitae](https://benjamingeets.be/Benjamin_Geets_CV.pdf)<br/>
-* 📫 Contact me by [mail](mailto:bgeets@icloud.com) 
+* 📫 Contact me by [Mail](mailto:bgeets@icloud.com) 
 
 
