@@ -2,7 +2,6 @@
 
 <p align="center">
   <a href="https://benjamingeets.be">Website</a> •
-  <a href="https://twitter.com/benjamingeets">Twitter</a> •
   <a href="https://www.linkedin.com/in/benjamingeets">Linkedin</a>
 </p>
 
@@ -13,6 +12,6 @@ I've mostly worked on frontend web dev but I'm looking to learn backend with Pyt
 
 * 👨‍🎓 Studying at [HEPH Condorcet](https://condorcet.be) <br/>
 * 📄 Discover my [Curriculum Vitae](https://benjamingeets.be/Benjamin_Geets_CV.pdf)<br/>
-* 📫 Contact me by [mail](mailto:bgeets@icloud.com) or on [twitter](https://twitter.com/benjamingeets)
+* 📫 Contact me by [mail](mailto:bgeets@icloud.com) 
 
 
