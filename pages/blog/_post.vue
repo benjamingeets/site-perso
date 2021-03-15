@@ -1,24 +1,11 @@
 <template>
     <div>
-        <h1>{{titre}}</h1>
-        <img v-if='image != null' :src="image" alt="">
-        <div v-html='$md.render(content)'></div>
-        <div v-if='!loaded'>
-              <content-loader
-    :width="400"
-    :height="230"
-    :speed="2"
-    primaryColor="#f3f3f3"
-    secondaryColor="#ecebeb"
-  >
-    <circle cx="31" cy="31" r="15" /> 
-    <rect x="58" y="18" rx="2" ry="2" width="140" height="10" /> 
-    <rect x="58" y="34" rx="2" ry="2" width="140" height="10" /> 
-    <rect x="0" y="60" rx="2" ry="2" width="400" height="204" />
-  </content-loader>
-        </div>
+        <h1>{{post.titre}}</h1>
+        <img v-if='post.image != null' :src="post.image" alt="">
+        <nuxt-content :document='post'/>
+
         <p>Tags : 
-            <span v-for='tag in tags' :key="tag.key"><NuxtLink :to="'/blog/recherche/' + tag">#{{tag}} </NuxtLink></span> 
+            <span v-for='tag in post.tags' :key="tag.key"><NuxtLink :to="'/blog/recherche/' + tag">#{{tag}} </NuxtLink></span> 
         </p>
         <NuxtLink to="/blog">
             <button>
@@ -26,67 +13,29 @@
             </button>
         </NuxtLink>
         <hr>
-        <p>publié le {{date.jour}}/{{date.mois}}/{{date.annee}} par <a href="https://twitter.com/benjamingeets">@benjamingeets</a></p>
+        <p>publié le {{post.date}} par <a href="https://twitter.com/benjamingeets">@benjamingeets</a></p>
     </div>
 </template>
 
 <script>
-
-import { ContentLoader } from 'vue-content-loader'
-
 export default {
-    components:{
-        ContentLoader
-    },
     head(){
         return{
-             title: `${this.titre} - Blog de Benjamin Geets`,
+             title: `${this.post.titre} - Blog de Benjamin Geets`,
                meta: [
-                    { hid: 'og:title', property: 'og:title', content: this.titre + " - Benjamin Geets"},
-                    { hid: 'og:image', property: 'og:image', content: this.image },
-                    { hid: 'og:description', property: 'og:description', content: this.content.substring(0,200) + "..." },
-                    { hid: 'twitter:title', name:'twitter:title', content:this.titre + " - Benjamin Geets"},
-                    { hid: 'twitter:description', name: 'twitter:description', content:this.content.substring(0,200) + "..."},
-                    { hid: 'twitter:image', name:'twitter:image', content:this.image }
+                    { hid: 'og:title', property: 'og:title', content: this.post.titre + " - Benjamin Geets"},
+                    { hid: 'og:image', property: 'og:image', content: 'https://benjamingeets.be' + this.post.image },
+                    { hid: 'og:description', property: 'og:description', content: this.post.description + "..." },
+                    { hid: 'twitter:title', name:'twitter:title', content:this.post.titre + " - Benjamin Geets"},
+                    { hid: 'twitter:description', name: 'twitter:description', content:this.description + "..."},
+                    { hid: 'twitter:image', name:'twitter:image', content: 'https://benjamingeets.be' + this.post.image }
                 ]
         }
     },
-    data(){
-        return{
-            titre:'⚪️ Titre de l\'article',
-            loaded:false,
-            article:{},
-            content:'',
-            image:'',
-            posts:[],
-            tags:'',
-            date:{
-                jour:'',
-                mois:'',
-                annee:''
-            }
-        }
-    },
-    async fetch() {
-      this.posts = await fetch(
-        'https://api.benjamingeets.be/blogs?slug=' + this.$route.params.post
-      ).then(res => res.json())
-
-      //Je mets le résultat de ma requete dans une variable article parce que c'est plus joli
-      this.article = this.posts[0]
-
-      //Je mets le contenu dans mes variables
-      this.titre = this.article.titre
-      this.content = this.article.article
-      this.image =  "https://api.benjamingeets.be" + this.article.image.url
-      this.tags = this.article.tags
-
-      //Je coupe la date pour mettre les valeurs ou ça m'arrange
-      this.date.jour = this.article.published_at.substring(8,10)
-      this.date.mois = this.article.published_at.substring(5,7)
-      this.date.annee = this.article.published_at.substring(0,4)
-
-      this.loaded = true
+    async asyncData({ $content, params}) {
+    let post;
+      post = await $content("blog", params.post).fetch();
+     return { post };
     }
 }
 </script>

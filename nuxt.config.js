@@ -1,5 +1,6 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  target:'static',
   head: {
     title: 'Benjamin Geets - Développeur web (Tournai 🇧🇪)',
     htmlAttrs: {
@@ -42,11 +43,15 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/markdownit'
+    '@nuxt/content'
   ],
+  content:{
+    nestedProperties: [],
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    publicPath: '/public/'
   },
   markdownit: {
     preset: 'default',

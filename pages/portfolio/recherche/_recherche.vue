@@ -2,7 +2,7 @@
     <div>
         <h1>🔎 {{$route.params.recherche}}</h1>
         <ul>
-            <li v-for='resultat in posts' :key='resultat.key'>
+            <li v-for='resultat in projets' :key='resultat.key'>
                 <NuxtLink :to="'/portfolio/'+resultat.slug">{{resultat.titre}}</NuxtLink>
             </li>
         </ul>
@@ -11,11 +11,6 @@
 
 <script>
 export default {
-  data(){
-    return{
-      posts:[]
-    }
-  },
   head(){
     return{
         title:`Recherche ${this.$route.params.recherche} - Benjamin Geets`,
@@ -24,10 +19,10 @@ export default {
                 ]
     }
   },
-  async fetch() {
-      this.posts = await fetch(
-        'https://api.benjamingeets.be/portfolios?technologies_contains=' + this.$route.params.recherche
-      ).then(res => res.json())
+    async asyncData({ $content, params}) {
+    let projets;
+      projets = await $content("projets").where({ 'technologies': { $contains: params.recherche } }).fetch()
+     return { projets };
     }
 }
 </script>
