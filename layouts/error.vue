@@ -9,3 +9,9 @@
         </NuxtLink>
     </div>
 </template>
+
+<style scoped>
+*{
+    transition: 0s;
+}
+</style>
