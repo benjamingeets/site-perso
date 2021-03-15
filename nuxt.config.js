@@ -9,7 +9,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Etudiant en e-Business depuis 2019, j\'ai commencé à bidouiller dès que j\'ai eu mon premier ordinateur vers 2012. Mes expériences m\'ont mené au développement web. Aujourd\'hui, je continue à me former au travers de tutoriels et des docs sur des frameworks tels que VueJS et NuxtJS afin de créer des applications que je déploie avec Debian/Nginx' },
+      { hid: 'description', name: 'description', content: 'Etudiant en e-Business depuis 2019, je me suis spécialisé dans le développement web à l\'aide de frameworks moderne tels VueJS/NuxtJS, Svelt,...' },
       { hid: 'og:title', property: 'og:title', content: "Benjamin Geets - Développeur web (Tournai 🇧🇪)"},
       { hid: 'og:image', property: 'og:image', content: "https://benjamingeets.be/og_image.png" },
       { hid: 'og:description', property: 'og:description', content: "Benjamin Geets - Etudiant en e-Business et auto didacte dévoloppeur web" },
