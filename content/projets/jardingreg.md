@@ -2,7 +2,7 @@
 titre : Ô Jardin de Greg
 technologies: [HTML, CSS, JavaScript]
 description: Intégration manuelle d'une maquette pour un site vitrine.
-image : /img/portfolio/jardingreg.png
+image : /img/portfolio/jardingreg.webp
 site: {
     disponible: True,
     url: jardingreg.be
