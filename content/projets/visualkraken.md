@@ -2,7 +2,7 @@
 titre : VisualKraken
 technologies : [HTML, CSS, NuxtJS]
 description: Création du site d'un agence web et développement web pour cette dernière
-image : /img/portfolio/visualkraken.png
+image : /img/portfolio/visualkraken.webp
 site: {
     disponible: True,
     url: visualkraken.be

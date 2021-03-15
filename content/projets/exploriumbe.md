@@ -2,7 +2,7 @@
 titre : Explorium
 technologies : [WordPress, CSS, JavaScript, MySQL]
 description: Mise en place d'un blog WordPress et rédaction.
-image : /img/portfolio/explorium.jpg
+image : /img/portfolio/explorium.webp
 site: {
     disponible: False,
     url: explorium.be

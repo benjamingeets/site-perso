@@ -2,7 +2,7 @@
 titre : HaptoAnneSo
 technologies : [WordPress, CSS]
 description: Réalisations d'un site vitrine sous WordPress.
-image : /img/blog/haptoanneso.png
+image : /img/portfolio/haptoanneso.webp
 site: {
     disponible: True,
     url: haptoanneso.be

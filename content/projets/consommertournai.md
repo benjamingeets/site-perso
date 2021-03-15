@@ -2,7 +2,7 @@
 titre : ConsommerTournai
 technologies : [HTML, CSS, PHP, MySQL]
 description: Mise en place d'une plateforme collaborative en soutien aux commerçants tournaisiens
-image : /img/portfolio/consommertournai.png
+image : /img/portfolio/consommertournai.webp
 site: {
     disponible: False,
     url: consommertournai.be

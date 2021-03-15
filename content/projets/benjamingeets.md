@@ -2,7 +2,7 @@
 titre : Site personnel
 technologies : [HTML, CSS, NuxtJS, NetlifyCMS]
 description: Création d'un site/blog/portfolio avec gestion de contenu sous NuxtJS.
-image : /img/portfolio/benjamingeets.png
+image : /img/portfolio/benjamingeets.webp
 site: {
     disponible: True,
     url: benjamingeets.be
