@@ -42,11 +42,11 @@ export default {
             title : 'Portfolio : ' + this.projet.titre +' - Benjamin Geets',
             meta: [
                     { hid: 'og:title', property: 'og:title', content: "Porfolio : " + this.projet.titre + " - Benjamin Geets"},
-                    { hid: 'og:image', property: 'og:image', content: this.projet.image },
+                    { hid: 'og:image', property: 'og:image', content: "https://benjamingeets.be" + this.projet.image },
                     { hid: 'og:description', property: 'og:description', content: this.projet.description + "..." },
-                    { hid: 'twitter:title', name:'twitter:title', content:"Porfolio : " + this.titre + " - Benjamin Geets"},
+                    { hid: 'twitter:title', name:'twitter:title', content:"Porfolio : " + this.projet.titre + " - Benjamin Geets"},
                     { hid: 'twitter:description', name: 'twitter:description', content:this.projet.description + "..."},
-                    { hid: 'twitter:image', name:'twitter:image', content:this.projet.image }
+                    { hid: 'twitter:image', name:'twitter:image', content: "https://benjamingeets.be" + this.projet.image }
                 ]
         }
     },
