@@ -17,7 +17,7 @@
 export default {
   head(){
    return{
-        title:`Blog #` + this.$route.params.recherche + ` - Benjamin Geets`
+        title:`Blog #` + this.$route.params.recherche + ` :: Benjamin Geets`
    }
   },
     async asyncData({ $content, params}) {

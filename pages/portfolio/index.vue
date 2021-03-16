@@ -21,7 +21,7 @@ export default {
   },
   head(){
     return{
-      title:'Portfolio - Benjamin Geets',
+      title:'Portfolio :: Benjamin Geets',
       meta: [
                     { hid: 'og:title', property: 'og:title', content: "Portfolio - Benjamin Geets"},
                 ]

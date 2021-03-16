@@ -2,7 +2,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   target:'static',
   head: {
-    title: 'Benjamin Geets - Développeur web (Tournai 🇧🇪)',
+    title: 'Benjamin Geets :: Développeur web (Tournai 🇧🇪)',
     htmlAttrs: {
       lang: 'fr'
     },

@@ -21,7 +21,7 @@
 export default {
     head(){
         return{
-             title: `${this.post.titre} - Blog de Benjamin Geets`,
+             title: `${this.post.titre} :: Benjamin Geets`,
                meta: [
                     { hid: 'og:title', property: 'og:title', content: this.post.titre + " - Benjamin Geets"},
                     { hid: 'og:image', property: 'og:image', content: 'https://benjamingeets.be' + this.post.image },

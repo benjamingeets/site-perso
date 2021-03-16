@@ -13,7 +13,7 @@
 export default {
   head(){
     return{
-        title:`Recherche ${this.$route.params.recherche} - Benjamin Geets`,
+        title:`Recherche ${this.$route.params.recherche} :: Benjamin Geets`,
         meta: [
                     { hid: 'og:title', property: 'og:title', content: "🔎 Projets utilisant " + this.$route.params.recherche + " - Benjamin Geets"}
                 ]

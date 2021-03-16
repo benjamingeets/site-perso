@@ -39,7 +39,7 @@ nav{
 export default {
     head(){
         return{
-            title : 'Portfolio : ' + this.projet.titre +' - Benjamin Geets',
+            title : this.projet.titre +' :: Benjamin Geets',
             meta: [
                     { hid: 'og:title', property: 'og:title', content: "Porfolio : " + this.projet.titre + " - Benjamin Geets"},
                     { hid: 'og:image', property: 'og:image', content: "https://benjamingeets.be" + this.projet.image },

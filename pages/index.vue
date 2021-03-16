@@ -59,7 +59,7 @@ header{
 export default {
   head(){
     return{
-      title:'Benjamin Geets - Développeur Web (Tournai 🇧🇪)'
+      title:'Benjamin Geets :: Développeur Web (Tournai 🇧🇪)'
     }
   },
     async asyncData({ $content}) {

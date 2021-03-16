@@ -21,7 +21,7 @@
 <script>
 export default {
   head:{
-    title:'Blog - Benjamin Geets',
+    title:'Blog :: Benjamin Geets',
   },
   data(){
     return{
